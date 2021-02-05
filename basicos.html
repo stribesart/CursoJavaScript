@@ -165,15 +165,15 @@ console.log(nulo);
 let noEsUnNumero = "hola" * 3.7;
 console.log(noEsUnNumero);
 
-*/
 
-/* Una funcion es un bloque de codigo cutocontenido que se puede definir una vez y ejecutar en cualquier momento.
+
+ Una funcion es un bloque de codigo cutocontenido que se puede definir una vez y ejecutar en cualquier momento.
 Opcionalmente, una funcion puede aceptar parametros y devolver un valor
 
 Las funciones en JavaScript son objetos, un tipo especial de objetos
 
 Se dice que las funciones son ciudaddanos de primera clase por que pueden asignarse a un valor, y pueden pasarse como argumnetos y usarse como un valor de retorno.
-*/
+
 
 
 
@@ -226,6 +226,64 @@ function unaFuncionQueDevuelveUnValor(){
     }
 
     funcionExpresada();
+    */
+
+
+
+
+    //Clase 11 Acerca de arreglos 
+
+    //un arreglo es una coleccion de elementos
+    const a = [];
+    const b = [1, true, "Hola", ["A", "B", "C"]];
+
+    console.log(a);
+    console.log(b);
+    console.log(b.length);
+    console.log(b[2]);
+    console.log(b[3][2]);
+
+    const c = Array.of("X", "Y", "Z", 9, 8, 7);
+    console.log(c);
+
+    const d = Array(100).fill(false);
+
+    console.log(d);
+
+    const e = new Array();
+    console.log(e);
+
+    const f =  Array(1,2,3,true,false);
+    console.log(f);
+
+    const colores = ["Rojo", "Verde", "Azul"];
+    console.log(colores);
+
+    colores.push("Negro");
+    console.log(colores);
+
+    colores.pop();
+    console.log(colores);
+
+    colores.forEach(function(el, index){
+        console.log(`<li id="${index}">${el}</li>`)
+    })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   </script>
  </body>

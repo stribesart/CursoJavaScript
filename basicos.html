@@ -39,7 +39,8 @@
    console.log("Variable musica despues del bloque", musica1);*/
    
    
-   
+   //Constante Const
+   /*
    let a;
    const PI = 3.1416;
    //const NUEVE;
@@ -49,7 +50,7 @@
    a= "kenai";
    console.log(a);
 
-   const objeto = {
+   const objeto = {//Si se puede cambiar el valor de la variable const ya que depende del tipo de dato por que es un arreglo y los arreglos son compuestos
        nombre: "Jon",
        edad: 35
    }
@@ -60,11 +61,29 @@
    console.log(colores);
 
    objeto.correo = "set_correo@gmail.com";
+   objeto.apellido = "Carranza";
    colores.push("anaranjado");
 
    console.log(objeto);
    console.log(colores);
+   */
+   //Cadenas de Texto aka Strings
+   let nombre = "Set";
+   let apellido = "Reyes";
+   let saludo = new String("Hola Mundo");
 
+   console.log(nombre, apellido, saludo);
+   console.log(
+       nombre.length,
+       apellido.length,
+       saludo.length,
+       nombre.toUpperCase(),
+       apellido.toLowerCase(),
+       nombre.includes("et"),
+       nombre,
+       nombre.trim(),
+       nombre.split(","),
+   )
   </script>
  </body>
 

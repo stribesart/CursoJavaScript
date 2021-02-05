@@ -150,7 +150,7 @@ console.log(typeof verdadero, typeof falso);
 console.log(Boolean(0));
 console.log(Boolean(-7));
 console.log(Boolean(""));
-*/
+
 
  
 //Clase 9 variables indefinidas
@@ -165,8 +165,67 @@ console.log(nulo);
 let noEsUnNumero = "hola" * 3.7;
 console.log(noEsUnNumero);
 
+*/
+
+/* Una funcion es un bloque de codigo cutocontenido que se puede definir una vez y ejecutar en cualquier momento.
+Opcionalmente, una funcion puede aceptar parametros y devolver un valor
+
+Las funciones en JavaScript son objetos, un tipo especial de objetos
+
+Se dice que las funciones son ciudaddanos de primera clase por que pueden asignarse a un valor, y pueden pasarse como argumnetos y usarse como un valor de retorno.
+*/
 
 
+
+//Clase 10 Funciones son bloques de codigo que tienes su proopio contenido que se va a definir una vez y se puede reutilizar, reciben parametros los cuales van a comenzar con una A mayuscula 
+
+//Funciones declaradas
+function estoEsUnaFuncion(){ //CamelCase
+    console.log("Uno");
+    console.log("Dos");
+    console.log("Tres");
+}
+
+
+//Invcocacion de Funcion
+// estoEsUnaFuncion();
+// estoEsUnaFuncion();
+// estoEsUnaFuncion();
+// estoEsUnaFuncion();
+
+function unaFuncionQueDevuelveUnValor(){
+   console.log("Uno");
+   return 19;
+   console.log("Dos");
+   console.log("Tres");
+   return "La funcion ha retornado una Cadena de Texto";
+}
+    // let valorDeFuncion = unaFuncionQueDevuelveUnValor();
+
+    // console.log(valorDeFuncion);
+
+    function saludar(nombre = "Desconocido", edad = 0){
+        console.log(`Hola mi nombre es ${nombre} y tengo ${edad} años`);
+    }
+    // saludar("set", 23);
+    // saludar();
+
+    //Funciones declaradas vs Funciones exresadas
+    
+    funcionDeclarada();
+    
+    function funcionDeclarada(){
+        console.log("Esto es una funcion declarada, puede invocarse en cualquier parte de nuestro codigo, incluso antes de que la funcion sea declarada")
+    }
+
+    funcionDeclarada(); 
+
+    //funcion anonima
+    const funcionExpresada = function (){
+        console.log("Esto es una funcion expresada...");
+    }
+
+    funcionExpresada();
 
   </script>
  </body>

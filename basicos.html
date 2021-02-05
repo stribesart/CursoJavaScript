@@ -226,7 +226,7 @@ function unaFuncionQueDevuelveUnValor(){
     }
 
     funcionExpresada();
-    */
+    
 
 
 
@@ -268,17 +268,59 @@ function unaFuncionQueDevuelveUnValor(){
     colores.forEach(function(el, index){
         console.log(`<li id="${index}">${el}</li>`)
     })
+*/
+
+    //los [] son arreglos, los {} son objetos
+
+    //Clase 12 Objetos
+
+    let a = new String("Hola");
+    // console.log(a);
 
 
+    const b = {};
+    console.log(b);
 
+    const c = new Object();
+    console.log(c);
 
+    
+    const set = {
+        nombre: "Set",
+        apellido: "Reyes",
+        edad: 23,
+        pasatiempos: ["Correr", "Jugar Videojuegos"],
+        soltero: false,
+        contacto: {
+            email: "reyessset@gmail.com",
+            twitter: "@SetReyes",
+            movil: "9823123213"
+        },
+        saludar: function(){
+            console.log("Hola")
+        },
+        decirMiNombre: function (){
+            console.log(`Hola me llamo ${this.nombre} ${this.apellido} y tengo ${this.edad} años y me puedes seguir como ${this.contacto.twitter} en twitter`)
+        }
+    }
 
+    console.log(set);
+    console.log(set["nombre"]);
+    console.log(set["apellido"]);
+    console.log(set.nombre);
+    console.log(set.apellido);
+    console.log(set.edad);
+    console.log(set.pasatiempos);
+    console.log(set.pasatiempos[1]);
+    console.log(set.contacto);
+    console.log(set.contacto.twitter);
+    set.saludar();
+    set.decirMiNombre();
 
-
-
-
-
-
+    console.log(Object.keys(set));
+    console.log(Object.values(set));
+    console.log(set.hasOwnProperty("nombre"));
+    console.log(set.hasOwnProperty("nacimiento"));
 
 
 

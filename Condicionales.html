@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condicionales</title>
+</head>
+<body>
+    <script>
+
+        /* if - else */
+/*
+        let edad = 17;
+
+        if (edad > 17) {
+            console.log("Eres mayor de edad");
+        } else {
+            console.log("Eres menor de edad");
+        }
+
+        if (edad >= 18) {
+            console.log("Eres mayor de edad");
+        } else {
+            console.log("Eres menor de edad");
+        }
+*/
+        /* if - else if - else */
+
+        let hora = 14;
+        let edad = 18;
+        
+        if (hora >= 0 && hora <= 5) {
+            console.log("Dejame dormir");
+        }else if (hora >= 6 && hora <= 11) {
+            console.log("Buenos dias");
+        } else if ( hora >= 12 && hora <= 19) {
+            console.log("Buenas Tardes");
+        }else{
+            console.log("Buenas noches");
+        }
+
+        //Operador Ternario
+        let eresMayor = (edad >= 18)
+            ? "Eres mayor de edad"
+            : "Eres menor de Edad";
+            console.log(eresMayor);
+        
+        //Switch - Case
+        let dia = 7;
+
+        switch(dia){
+            case 0:
+                console.log("DOMINGO");
+            break;
+            case 1:
+                console.log("LUNES");
+                break;
+            case 2:
+                console.log("MARTES");
+                break;
+            case 3:
+                console.log("MIERCOLES");
+                break;
+            case 4:
+                console.log("JUEVES");
+                break;
+            case 5:
+                console.log("VIERNES");
+                break;
+            case 6:
+                console.log("SABADO");
+                break;
+            default:
+                console.log("El dia no existe");
+            break;
+        }
+
+
+    </script>
+</body>
+</html>

@@ -283,14 +283,74 @@ const calcularAnios = (fecha = undefined) =>{
 
 }
 
-calcularAnios(false);
+/* calcularAnios(false);
 calcularAnios(new Date());
-calcularAnios(new Date(1997, 4, 23));
+calcularAnios(new Date(1997, 4, 23)); */
+
+// 18) Programa una función que dada una cadena de texto cuente el número de vocales y consonantes, pe. miFuncion("Hola Mundo") devuelva Vocales: 4, Consonantes: 5.
+
+const contarLetras = (cadena = "") =>{
+ if(!cadena) return console.warn("no ingresaste una cadena de texto");
+
+ if(typeof cadena !== "string") return console.error(`El valor ${cadena} ingresado no es una cadena de texto`);
+
+ let vocales = 0,
+  consonantes = 0;
+
+ cadena = cadena.toLocaleLowerCase();
+
+ for (let letra of cadena) {
+  if(/[aeiou]/.test(letra)){
+   vocales ++;
+  }
+
+  if(/[bcdfghjklmnpqrstvxyz]/.test(letra)){
+   consonantes++;
+  }
+ }
+
+ return console.info({
+  cadena,
+  vocales,
+  consonantes
+ });
+}
+//contarLetras("Hola mundo");
+
+// 19) Programa una función que valide que un texto sea un nombre válido, pe. miFuncion("Jonathan MirCha") devolverá verdadero.
+
+const validarNombre = (nombre = "") =>{
+ if(!nombre) return console.warn("no ingresaste un numbre");
+
+ if(typeof nombre !== "string") return console.error(`El valor ${nombre} ingresado no es una cadena de texto`);
+
+ let expReg = /^[A-Za-z\s]+$/g.test(nombre);
+ return (expReg)
+  ? console.info("Valido")
+  : console.info("no valido");
+}
+
+// validarNombre("Set Reyes");
+
+// 20) Programa una función que valide que un texto sea un email válido, pe. miFuncion("jonmircha@gmail.com") devolverá verdadero.
+
+const validarEmail = (email = "") =>{
+ if(!email) return console.warn("no ingresaste un numbre");
+
+ if(typeof email !== "string") return console.error(`El valor ${email} ingresado no es una cadena de texto`);
+
+ let expReg = /[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})/i.test(email);
+ return (expReg)
+  ? console.info(`${email} valido`)
+  : console.info(`${email} no valido`);
+}
+
+// validarEmail("reyessset@gmail.com");
 
 
-
-
-
+// 21) Programa una función que dado un array numérico devuelve otro array con los números elevados al cuadrado, pe. mi_funcion([1, 4, 5]) devolverá [1, 16, 25].
+// 22) Programa una función que dado un array devuelva el número mas alto y el más bajo de dicho array, pe. miFuncion([1, 4, 5, 99, -60]) devolverá [99, -60].
+// 23) Programa una función que dado un array de números devuelva un objeto con 2 arreglos en el primero almacena los números pares y en el segundo los impares, pe. miFuncion([1,2,3,4,5,6,7,8,9,0]) devolverá {pares: [2,4,6,8,0], impares: [1,3,5,7,9]}.
 
 
 

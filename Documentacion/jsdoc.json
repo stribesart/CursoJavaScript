@@ -1,0 +1,21 @@
+{
+ "plugins": [],
+ "source": {
+  "include": ["../Modulos/js"],
+  "includePattern": ".js",
+  "excludePattern": "(node_modules|docs)"
+ },
+ "sourceType": "module",
+ "tags": {
+  "allowUnknownTags": true,
+  "dictionaries": ["jsdoc","closure"]
+ },
+ "templates": {
+  "cleverLinks": false,
+  "monospaceLinks": false
+ },
+ "opts": {
+  "recurse": "true",
+  "destination":"./Documento"
+ }
+}

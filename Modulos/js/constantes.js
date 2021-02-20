@@ -1,3 +1,6 @@
+/**
+ * funcion que calcula pi
+ */
 export const PI = Math.PI;
 
 let usuario ="Set";

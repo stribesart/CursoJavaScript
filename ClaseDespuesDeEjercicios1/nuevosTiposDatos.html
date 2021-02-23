@@ -9,7 +9,7 @@
 <body>
  <h1>Nuevos Tipos de Datos en JavaScript</h1>
  <script>
-   let id= Symbol("id");
+/*    let id= Symbol("id");
    let id2= Symbol("id2");
 
    console.log(id === id2);
@@ -43,7 +43,45 @@
    console.log(persona[propiedad]); 
   }
 
-  console.log(Object.getOwnPropertySymbols(persona));
+  console.log(Object.getOwnPropertySymbols(persona)); */
+
+  const set = new Set([1,2,3,3,4,5,true,false,true,{},{},"hola","HOLA"]);
+  console.log(set);
+  console.log(set.size);
+
+  const set2 = new Set();
+  set2.add(1);
+  set2.add(2);
+  set2.add(2);
+  set2.add(3);
+  set2.add(true);
+  set2.add(false);
+  set2.add(true);
+  set2.add({});
+
+  console.log(set2);
+  console.log(set2.size);
+
+  console.log("recorriendo set");
+  for( item of set){
+   console.log(item);
+  }
+
+  console.log("recorriendo set 2");
+  set2.forEach(item => console.log((item)));
+
+  let arr = Array.from(set);
+
+  console.log(arr[9]);
+
+  set.delete("HOLA");
+  console.log(set);+
+
+  console.log(set.has("hola"));
+
+  set2.clear();
+  console.log(set2);
+
  </script>
 </body>
 </html>

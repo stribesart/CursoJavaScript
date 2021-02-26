@@ -258,7 +258,7 @@
   } */
 
 
-  const persona = {
+  /* const persona = {
    nombre: "",
    apellido: "",
    edad: 0
@@ -288,6 +288,24 @@
   console.log(set);
 
   console.log(persona);
+ */
+
+  let aleatorio = Math.round(Math.random()*100 +5);
+  
+  const objUsuarios = {
+   [`id_${aleatorio}`]: "Valor Aleatorio"
+  }
+  const usuarios =["set", "cad", "eli", "yael"];
+
+  usuarios.forEach((usuario, index) => objUsuarios[`id_${index}`] = usuario);
+  console.log(objUsuarios);
+
+
+
+
+
+
+
 
 
 

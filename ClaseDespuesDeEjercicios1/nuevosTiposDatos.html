@@ -290,8 +290,8 @@
   console.log(persona);
  */
 
-  let aleatorio = Math.round(Math.random()*100 +5);
-  
+/*   let aleatorio = Math.round(Math.random()*100 +5);
+
   const objUsuarios = {
    [`id_${aleatorio}`]: "Valor Aleatorio"
   }
@@ -299,14 +299,63 @@
 
   usuarios.forEach((usuario, index) => objUsuarios[`id_${index}`] = usuario);
   console.log(objUsuarios);
+ */
+
+  console.log(this);
+  console.log(this === window);
+
+  this.nombre = "contexto Global";
+  console.log(this.nombre);
+
+  function imprimir(){
+   console.log(this.nombre);
+  }
+  imprimir();
 
 
+  const obj = {
+   nombre: "Contexto Objeto",
+   imprimir: function(){
+    console.log(this.nombre);
+   }
+  }
+
+  obj.imprimir();
+
+  const obj2 = {
+   nombre: "Objeto Contexto 20",
+   imprimir
+  }
 
 
+  obj2.imprimir();
 
+  const obj3 = {
+   nombre: "Contexto Objeto",
+   imprimir: () => {
+    console.log(this.nombre);
+   }
+  }
 
+  obj3.imprimir();
 
+  function Persona(nombre){
+   const that = this;
+   that.nombre = nombre;
+   //return console.log(this.nombre);
+   /* return function(){
+    console.log(this.nombre);
+   } */
+   //return () => console.log(this.nombre, 77); 
 
+   return function(){
+    console.log(that.nombre);
+   }
+  }
+
+  let set = new Persona("Set");
+
+  set();
 
 
  </script>

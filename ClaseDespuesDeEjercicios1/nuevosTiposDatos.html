@@ -210,7 +210,7 @@
   //  next = iterador.next();
   // }
 
-  function* iterable(){
+/*   function* iterable(){
    yield "hola";
    console.log("Hola consola");
    yield "hola2";
@@ -220,12 +220,12 @@
   }
 
   let iterador = iterable();
-  /* console.log(iterador.next());
+ console.log(iterador.next());
   console.log(iterador.next());
   console.log(iterador.next());
   console.log(iterador.next());
   console.log(iterador.next());
-  console.log(iterador.next()); */
+  console.log(iterador.next()); 
 
   for (let y of iterador) {
    console.log(y);
@@ -255,7 +255,40 @@
 
   for(let y of gen){
    console.log(y);
+  } */
+
+
+  const persona = {
+   nombre: "",
+   apellido: "",
+   edad: 0
   }
+
+  const manejador= {
+   set(obj, prop, valor){
+    if (Object.keys(obj).indexOf(prop) === -1) {
+     return console.error(`La propiedad ${prop} no existe en el objeto persona`);
+    }
+
+    if (
+     (prop ==="nombre" || prop === "apellido")&&
+     !(/^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/g.test(valor))
+    ) {
+     return console.error(`La propiedad ${prop} solo acepta letas y espacios en blanco`);
+    }
+    obj[prop] = valor;
+   }
+  }
+
+  const set = new Proxy(persona, manejador);
+  set.nombre = "Set ";
+  set.apellido = "Reyes";
+  set.edad = 35;
+  set.twitter = "@reyessset";
+  console.log(set);
+
+  console.log(persona);
+
 
 
  </script>

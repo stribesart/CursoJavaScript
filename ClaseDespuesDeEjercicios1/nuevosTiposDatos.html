@@ -4,10 +4,10 @@
  <meta charset="UTF-8">
  <meta http-equiv="X-UA-Compatible" content="IE=edge">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Nuevos Tipos de Datos en JavaScript</title>
+ <title>This en JavaScript</title>
 </head>
 <body>
- <h1>Nuevos Tipos de Datos en JavaScript</h1>
+ <h1>This en JavaScript</h1>
  <script>
 /*    let id= Symbol("id");
    let id2= Symbol("id2");
@@ -301,7 +301,7 @@
   console.log(objUsuarios);
  */
 
-  console.log(this);
+/*   console.log(this);
   console.log(this === window);
 
   this.nombre = "contexto Global";
@@ -343,9 +343,9 @@
    const that = this;
    that.nombre = nombre;
    //return console.log(this.nombre);
-   /* return function(){
+   return function(){
     console.log(this.nombre);
-   } */
+   }
    //return () => console.log(this.nombre, 77); 
 
    return function(){
@@ -355,7 +355,46 @@
 
   let set = new Persona("Set");
 
-  set();
+  set(); */
+
+
+
+  console.log(this);
+  this.lugar = "ContextoGlobal";
+
+  function saludar(saludo, aQuien){
+   console.log(`${saludo} ${aQuien} desde el ${this.lugar}`);
+  }
+
+  saludar("hola", "perro");
+
+  const obj = {
+   lugar: "Contexto Objeto"
+  }
+
+  saludar.call(obj, "Hola", "Set");
+  saludar.call(null, "Hola", "Set");
+  saludar.call(this, "Hola", "Set");
+  saludar.apply(obj, ["Adios", "reyes"]);
+  saludar.apply(null, ["Adios", "reyes"]);
+  saludar.apply(this, ["Adios", "reyes"]);
+
+  this.nombre = "window";
+  
+  const persona = {
+   nombre: "set",
+   saludar: function(){
+    console.log(`Hola ${this.nombre}`);
+   }
+  }
+  
+  persona.saludar();
+
+  const otraPersona = {
+   saludar: persona.saludar.bind(this)
+  }
+  
+  otraPersona.saludar();
 
 
  </script>

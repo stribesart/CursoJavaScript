@@ -134,7 +134,7 @@ $card.classList.add("opacity-80", "sepia")
 $card.classList.remove("opacity-80", "sepia")
 $card.classList.toggle("opacity-80", "sepia") */
 
-const $whatisDOM = document.getElementById("que-es");
+/* const $whatisDOM = document.getElementById("que-es");
 
 let text = `
   <p>
@@ -151,4 +151,21 @@ let text = `
 //$whatisDOM.innerText = text;
 $whatisDOM.textContent = text;
 $whatisDOM.innerHTML = text;
-$whatisDOM.outerHTML = text;
+$whatisDOM.outerHTML = text; */
+
+const $cards = document.querySelector(".cards");
+
+console.log($cards);
+console.log($cards.children);
+console.log($cards.children);
+console.log($cards.children[2]);
+console.log($cards.parentElement);
+console.log($cards.firstElementChild);
+console.log($cards.lastElementChild);
+console.log($cards.previousElementSibling);
+console.log($cards.nextElementSibling);
+console.log($cards.closest("div"))
+console.log($cards.closest("body"))
+console.log($cards.children[3].closest("section"))
+
+

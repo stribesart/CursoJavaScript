@@ -292,7 +292,7 @@ document.body.appendChild($ul3); */
   // $cards.insertBefore($newCard, $cards.firstElementChild);
   document.body.appendChild($cloneCards); */
 
-  const $cards = document.querySelector(".cards"),
+/*   const $cards = document.querySelector(".cards"),
   $newCard = document.createElement("figure");
 
   let $contentCard = `
@@ -308,4 +308,28 @@ $newCard.querySelector("figcaption").insertAdjacentText("afterbegin", "Any");
 // $cards.prepend($newCard);
 // $cards.append($newCard);
 // $cards.before($newCard);
-$cards.after($newCard);
+$cards.after($newCard); */
+
+function holaMundo(){
+  alert("Hola Mundo");
+  console.log(event);
+}
+
+const $eventoSemantico = document.getElementById("evento-semantico"),
+  $eventoMultiple = document.getElementById("evento-multiple");
+
+$eventoSemantico.onclick = holaMundo;
+$eventoSemantico.onclick = function(e){
+  alert("Hola mundo manejador de eventos semantico");
+  console.log(e);
+  console.log(event);
+};
+
+$eventoMultiple.addEventListener("click", (e) => {
+  alert("Hola mundo manejador de eventos multiples");
+  console.log(e);
+  console.log(e.type);
+  console.log(e.target);
+  console.log(event);
+});
+

@@ -112,7 +112,7 @@ varDarkColor = getComputedStyle($html).getPropertyValue("--dark-color");
 
 $body.style.setProperty("background-color", varDarkColor); */
 
-const $card = document.querySelector(".card");
+/* const $card = document.querySelector(".card");
 
 console.log($card);
 console.log($card.className);
@@ -132,5 +132,23 @@ $card.classList.toggle("rotate-45");
 $card.classList.replace("rotate-45", "rotate-135");
 $card.classList.add("opacity-80", "sepia")
 $card.classList.remove("opacity-80", "sepia")
-$card.classList.toggle("opacity-80", "sepia")
+$card.classList.toggle("opacity-80", "sepia") */
 
+const $whatisDOM = document.getElementById("que-es");
+
+let text = `
+  <p>
+    El modelo de objetos del documento (<b><i>DOM - Document Object Model</i></b>) es un API para documentos HTML y XML
+  </p>
+  <p>
+    Este provee una representacion estructural del documento, permitiedo modificar su contenido y presentacion visual mediante codigo JS.
+  </p>
+  <p>
+    <mark> El DOM no es parte de la especificacion de JavaScript, es una API para los navegadores</mark>
+  </p>
+`;
+
+//$whatisDOM.innerText = text;
+$whatisDOM.textContent = text;
+$whatisDOM.innerHTML = text;
+$whatisDOM.outerHTML = text;

@@ -355,21 +355,19 @@ $cards.after($newCard); */
 
 // $eventoRemover.addEventListener("dblclick", removerDobleClick);
 
-const $divsEventos = document.querySelectorAll(".eventos-flujo div");
+  function flujoEventos(e){
+    console.log(`Hola te saluda ${this}, el click lo origino ${e.target.className}`);
+  }
 
-console.log($divsEventos);
+  document.addEventListener("click", (e) => {
+    console.log("Click en ",e.target);
 
-function flujoEventos(e){
-  console.log(`Hola te saluda ${this.className}, el click lo origino ${e.target.className}`);
-}
+    if(e.target.matches(".eventos-flujo div")){
+      flujoEventos(e);
+    }
 
-$divsEventos.forEach(div => {
-  //Fase de burbuja
-  // div.addEventListener("click", flujoEventos);
-  // div.addEventListener("click", flujoEventos,false);
-  //Fase de Captura
-  div.addEventListener("click", flujoEventos, {
-    capture: false,
-    once:true,
+    if(e.target.matches(".eventos-flujo a")){
+      alert(`Hola es tu amigo y docente digital, eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeel Jon mirchas`);
+      e.preventDefault();
+    }
   });
-})

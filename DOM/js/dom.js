@@ -310,47 +310,66 @@ $newCard.querySelector("figcaption").insertAdjacentText("afterbegin", "Any");
 // $cards.before($newCard);
 $cards.after($newCard); */
 
-function holaMundo(){
-  alert("Hola Mundo");
-  console.log(event);
+// function holaMundo(){
+//   alert("Hola Mundo");
+//   console.log(event);
+// }
+
+
+// function saludar(nombre = "Desconocid@"){
+//   alert(`Hola ${nombre}`);
+//   console.log(event);
+// }
+
+
+// const $eventoSemantico = document.getElementById("evento-semantico"),
+//   $eventoMultiple = document.getElementById("evento-multiple"),
+//   $eventoRemover = document.getElementById("evento-remover");
+
+// $eventoSemantico.onclick = holaMundo;
+// $eventoSemantico.onclick = function(e){
+//   alert("Hola mundo manejador de eventos semantico");
+//   console.log(e);
+//   console.log(event);
+// };
+
+// $eventoMultiple.addEventListener("click", holaMundo);
+// $eventoMultiple.addEventListener("click", (e) => {
+//   alert("Hola mundo manejador de eventos multiples");
+//   console.log(e);
+//   console.log(e.type);
+//   console.log(e.target);
+//   console.log(event);
+// });
+// $eventoMultiple.addEventListener("click", () => {
+//   saludar()
+//   saludar("SET");
+// });
+
+// const removerDobleClick = (e) => {
+//   alert(`Removiendo el evento del tipo ${e.type}`);
+//   console.log(e);
+//   $eventoRemover.removeEventListener("dblclick", removerDobleClick);
+//   $eventoRemover.disabled = true;
+// }
+
+// $eventoRemover.addEventListener("dblclick", removerDobleClick);
+
+const $divsEventos = document.querySelectorAll(".eventos-flujo div");
+
+console.log($divsEventos);
+
+function flujoEventos(e){
+  console.log(`Hola te saluda ${this.className}, el click lo origino ${e.target.className}`);
 }
 
-
-function saludar(nombre = "Desconocid@"){
-  alert(`Hola ${nombre}`);
-  console.log(event);
-}
-
-
-const $eventoSemantico = document.getElementById("evento-semantico"),
-  $eventoMultiple = document.getElementById("evento-multiple"),
-  $eventoRemover = document.getElementById("evento-remover");
-
-$eventoSemantico.onclick = holaMundo;
-$eventoSemantico.onclick = function(e){
-  alert("Hola mundo manejador de eventos semantico");
-  console.log(e);
-  console.log(event);
-};
-
-$eventoMultiple.addEventListener("click", holaMundo);
-$eventoMultiple.addEventListener("click", (e) => {
-  alert("Hola mundo manejador de eventos multiples");
-  console.log(e);
-  console.log(e.type);
-  console.log(e.target);
-  console.log(event);
-});
-$eventoMultiple.addEventListener("click", () => {
-  saludar()
-  saludar("SET");
-});
-
-const removerDobleClick = (e) => {
-  alert(`Removiendo el evento del tipo ${e.type}`);
-  console.log(e);
-  $eventoRemover.removeEventListener("dblclick", removerDobleClick);
-  $eventoRemover.disabled = true;
-}
-
-$eventoRemover.addEventListener("dblclick", removerDobleClick);
+$divsEventos.forEach(div => {
+  //Fase de burbuja
+  // div.addEventListener("click", flujoEventos);
+  // div.addEventListener("click", flujoEventos,false);
+  //Fase de Captura
+  div.addEventListener("click", flujoEventos, {
+    capture: false,
+    once:true,
+  });
+})
